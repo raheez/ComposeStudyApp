@@ -3,6 +3,10 @@ buildscript {
         compose_version = '1.1.0-beta01'
         kotlin_version = '1.5.31'
     }
+    repositories {
+        google()
+        mavenCentral()
+    }
 
     dependencies {
         classpath "com.android.tools.build:gradle:7.0.4"
