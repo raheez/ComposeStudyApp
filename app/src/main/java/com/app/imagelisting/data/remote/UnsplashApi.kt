@@ -13,6 +13,6 @@ interface UnsplashApi {
     @GET("/photos")
     suspend fun getAllImages(
         @Query("page") page:Int,
-        @Query("per_page") per_page:Int):List<UnsplashImage>
+        @Query("per_page") perPage:Int):List<UnsplashImage>
 
 }

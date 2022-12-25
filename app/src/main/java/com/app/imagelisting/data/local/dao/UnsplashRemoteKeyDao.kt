@@ -18,5 +18,4 @@ interface UnsplashRemoteKeyDao {
     @Query("DELETE FROM unsplash_remote_keys_table")
     suspend fun deleteAllRemoteKeys()
 
-
 }
