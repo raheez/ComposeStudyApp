@@ -60,7 +60,7 @@ class RemoteUnsplashMediator(
             val prevPage = if(currentPAge == 1) null else currentPAge -1
             val nextPage = if(endOfPaginationReached) null else currentPAge +1
 
-            unsplashDatabase?.withTransaction {
+            unsplashDatabase.withTransaction {
                 if (loadType == LoadType.REFRESH){
                     unsplashImageDao.deleteAllImages()
                     unsplashRemoteKeyDao.deleteAllRemoteKeys()
@@ -74,8 +74,8 @@ class RemoteUnsplashMediator(
                         nextPage = nextPage
                     )
                 }
-                unsplashRemoteKeyDao?.addAllRemoteKeys(remoteKeys = keys)
-                unsplashImageDao?.addImages(images = response)
+                unsplashRemoteKeyDao.addAllRemoteKeys(remoteKeys = keys)
+                unsplashImageDao.addImages(images = response)
             }
             return MediatorResult.Success(endOfPaginationReached = endOfPaginationReached)
         }catch (e:Exception){
