@@ -15,42 +15,22 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.semantics.Role.Companion.Image
 import androidx.compose.ui.tooling.preview.Preview
+import androidx.navigation.compose.rememberNavController
+import androidx.paging.ExperimentalPagingApi
+import com.app.imagelisting.navigation.setUpNavGraph
 import com.app.imagelisting.ui.theme.ImageListingTheme
 import dagger.hilt.android.AndroidEntryPoint
 
+@ExperimentalPagingApi
 @AndroidEntryPoint
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
-            ImageListingTheme {
-                // A surface container using the 'background' color from the theme
-                Surface(
-                    modifier = Modifier.fillMaxSize(),
-                    color = MaterialTheme.colors.background
-                ) {
-                    Greeting("Android")
 
-                    Text(text = "ryan")
-                    Image(painter = painterResource(id = R.drawable.placeholder_image), contentDescription = "place holder image" )
-                }
-            }
+            val navController = rememberNavController()
+            setUpNavGraph(navController = navController)
+
         }
-    }
-}
-
-@Composable
-fun Greeting(name: String) {
-    //Text(text = "Hello $name!")
-
-
-
-}
-
-@Preview(showBackground = true)
-@Composable
-fun DefaultPreview() {
-    ImageListingTheme {
-        Greeting("Android")
     }
 }
