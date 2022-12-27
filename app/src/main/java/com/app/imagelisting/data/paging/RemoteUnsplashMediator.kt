@@ -24,9 +24,7 @@ class RemoteUnsplashMediator(
         state: PagingState<Int, UnsplashImage>
     ): MediatorResult {
 
-
         return try{
-
             val currentPAge = when(loadType){
                 LoadType.REFRESH ->{
 
@@ -78,7 +76,8 @@ class RemoteUnsplashMediator(
                 unsplashImageDao.addImages(images = response)
             }
             return MediatorResult.Success(endOfPaginationReached = endOfPaginationReached)
-        }catch (e:Exception){
+        }
+        catch (e:Exception){
             return MediatorResult.Error(e)
         }
     }
@@ -113,6 +112,5 @@ class RemoteUnsplashMediator(
                 unsplashRemoteKeyDao.getRemoteKeys(id = unsplashImage.id)
             }
     }
-
 
 }
