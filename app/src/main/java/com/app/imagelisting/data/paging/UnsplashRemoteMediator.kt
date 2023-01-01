@@ -11,7 +11,7 @@ import com.app.imagelisting.model.UnsplashImage
 import com.app.imagelisting.model.UnsplashRemoteKeys
 
 @ExperimentalPagingApi
-class RemoteUnsplashMediator(
+class   UnsplashRemoteMediator(
     private val unsplashApi:UnsplashApi,
     private val unsplashDatabase: UnsplashDatabase
 ) :RemoteMediator<Int,UnsplashImage>(){

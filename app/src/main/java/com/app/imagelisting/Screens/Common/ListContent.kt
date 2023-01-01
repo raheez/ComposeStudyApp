@@ -38,7 +38,7 @@ import com.app.imagelisting.model.User
 @ExperimentalCoilApi
 @Composable
 fun ListContent(items: LazyPagingItems<UnsplashImage>) {
-    Log.d("Error", items.loadState.toString())
+    Log.d("Error_LISTCONTENT", items.loadState.toString())
     LazyColumn(
         modifier = Modifier.fillMaxSize(),
         contentPadding = PaddingValues(all = 12.dp),
