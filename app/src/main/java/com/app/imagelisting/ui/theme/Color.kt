@@ -10,7 +10,7 @@ val Teal200 = Color(0xFF03DAC5)
 
 
 val Colors.topAppBarContentColor: Color
-    get() = if (isLight) Color.White else Color.LightGray
+    get() = if (isLight) Color.LightGray  else Color.White
 
 val Colors.topAppBarBackgroundColor: Color
-    get() = if (isLight) Purple500 else Color.Black
+    get() = if (isLight) Color.Black  else Purple500

@@ -29,5 +29,5 @@ fun HomeScreen(
         },
         content = {
             ListContent(items = getAllImages)
-        })
+        }, backgroundColor = Color.Black)
 }
